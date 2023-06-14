@@ -9,9 +9,6 @@ public class Task3 {
         }
         return arr;
     }
-    public static void task2() {
-        int[] arr = generateRandomArray();
-    }
     public static void main(String[] args) {
         int[] arr = generateRandomArray();
         int maxDay = 0;
@@ -23,8 +20,8 @@ public class Task3 {
             if (arr[i] < minDay)
                 minDay = arr[i];
         }
-            System.out.println(maxDay);
-            System.out.println(minDay);
+            System.out.println("Максимальная сумма трат за день составила " + maxDay);
+            System.out.println("Минимальная сумма трат за день составила "  +  minDay);
         }
     }
 
