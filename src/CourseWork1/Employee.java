@@ -43,8 +43,7 @@ public class Employee {
     public String toString() {
         return  fio + ", department=" + department +
                 ", salary=" + salary +
-                ", id=" + id +
-                '}';
+                ", id=" + id ;
     }
 }
 
