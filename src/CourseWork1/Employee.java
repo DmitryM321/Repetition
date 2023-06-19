@@ -38,5 +38,13 @@ public class Employee {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return  fio + ", department=" + department +
+                ", salary=" + salary +
+                ", id=" + id +
+                '}';
+    }
 }
 
