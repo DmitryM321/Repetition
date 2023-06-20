@@ -1,5 +1,8 @@
 package CourseWork1;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class StartApp {
     public static void allEmployee(Employee[] employee){
         for (Employee emp : employee) {
@@ -42,8 +45,28 @@ public class StartApp {
         }
         System.out.println(sum/employee.length);
     }
-
-
+    public static void allEmployees(Employee[] employee) {
+        for (Employee emp : employee) {
+            System.out.print(emp.getFio() + " ");
+        }
+    }
+    public static void indexing(Employee[] employee){
+        for (Employee emp : employee) {
+            System.out.printf("%.2f%n", emp.getSalary() * 1.08);
+        }
+    }
+    public static void minSalaryInDepartment(Employee[] employee, int department) {
+        double min = Double.MAX_VALUE;;
+        String name = null;
+        for (int i = 0; i < employee.length; i++) {
+            if (department == employee[i].getDepartment()) {
+                        if (min >= employee[i].getSalary()){
+                        min = employee[i].getSalary();
+                        name = employee[i].getFio();
+                        }
+                }
+            } System.out.println(name + " " + min);
+        }
 
     public static void main(String[] args) {
         Employee[] employee = new Employee[]{new Employee("Сидр Лютый Прелютый", 1, 55000),
@@ -66,6 +89,12 @@ public class StartApp {
         System.out.println("Средняя зарплата в месяц:");
         avgSalary(employee);
         System.out.println("Получить Ф.И.О. всех сотрудников:");
+        allEmployees(employee);
+        System.out.println("Проиндексировать зарплату:");
+        indexing(employee);
+        System.out.println("Сотрудник отдела с минимальной зарплатой:");
+        minSalaryInDepartment(employee, 3);
+
     }
 }
 
