@@ -27,8 +27,7 @@ public class EmployeeBook {
         }
         System.out.println(sum);
     }
-
-    public void minSalary(Employee[] employee) {
+    public void minSalary() {
         double min = Double.MAX_VALUE;
         String name = null;
         for (int i = 0; i < employee.length; i++) {
@@ -39,8 +38,7 @@ public class EmployeeBook {
         }
         System.out.println(name);
     }
-
-    public void maxSalary(Employee[] employee) {
+    public void maxSalary() {
         double max = Double.MIN_VALUE;
         String name = null;
         for (int i = 0; i < employee.length; i++) {
@@ -51,8 +49,7 @@ public class EmployeeBook {
         }
         System.out.println(name);
     }
-
-    public void avgSalary(Employee[] employee) {
+    public void avgSalary() {
         double sum = 0;
         for (int i = 0; i < employee.length; i++) {
             sum = employee[i].getSalary() + sum;
@@ -60,17 +57,17 @@ public class EmployeeBook {
         System.out.println(sum / employee.length);
     }
 
-    public void allEmployees(Employee[] employee) {
+    public void allEmployees() {
         for (Employee emp : employee) {
             System.out.print(emp.getFio() + " ");
         }
     }
-    public void indexing(Employee[] employee) {
+    public void indexing() {
         for (Employee emp : employee) {
             System.out.printf("%.2f%n", emp.getSalary() * 1.08);
         }
     }
-    public static void minSalaryInDepartment(Employee[] employee, int department) {
+    public   void minSalaryInDepartment(int department) {
         double min = Double.MAX_VALUE;
         ;
         String name = null;
@@ -84,7 +81,7 @@ public class EmployeeBook {
         }
         System.out.println(name + " " + min);
     }
-    public void maxSalaryInDepartment(Employee[] employee, int department) {
+    public void maxSalaryInDepartment(int department) {
         double min = Double.MIN_VALUE;
         ;
         String name = null;
@@ -98,7 +95,7 @@ public class EmployeeBook {
         }
         System.out.println(name + " " + min);
     }
-    public void sumSalaryInDepartment(Employee[] employee, int department) {
+    public void sumSalaryInDepartment(int department) {
         double sum = 0;
         for (int i = 0; i < employee.length; i++) {
             if (department == employee[i].getDepartment()) {
@@ -107,7 +104,7 @@ public class EmployeeBook {
         }
         System.out.println(sum);
     }
-    public void avgSalaryInDepartment(Employee[] employee, int department) {
+    public void avgSalaryInDepartment(int department) {
         double sum = 0;
         int employeeInDepartment = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -118,7 +115,7 @@ public class EmployeeBook {
         }
         System.out.println(sum / employeeInDepartment);
     }
-    public void indexSalaryInDepartment(Employee[] employee, int department, int index) {
+    public void indexSalaryInDepartment(int department, int index) {
         double salary = 0;
         int employeeInDepartment = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -128,14 +125,14 @@ public class EmployeeBook {
             }
         }
     }
-    public void printAllInDepartment(Employee[] employee, int department) {
+    public void printAllInDepartment(int department) {
         for (Employee value : employee) {
             if (department == value.getDepartment()) {
                 System.out.println(value.getFio() + " salary: " + value.getSalary() + " id " + value.getId());
             }
         }
     }
-    public void allEmployeeLessSalary(Employee[] employee, int salary) {
+    public void allEmployeeLessSalary(int salary) {
         for (Employee value : employee) {
             if (salary >= value.getSalary()) {
                 System.out.println(value.getFio() + " salary: " + value.getSalary() + " id " + value.getId());

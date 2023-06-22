@@ -11,40 +11,29 @@ public class StartApp {
         employeeBook.getAllEmployees();
         System.out.println("Общая зарплата в месяц:");
         employeeBook.sumSalary();
-
-
-    }
-}
-
-//        EmployeeBook
-//        employee.allEmployee();
-//
-//        employee.allEmployee();
-//        System.out.println("Общая зарплата в месяц:");
-//        employee.sumSalary();
-//        System.out.println("Сотрудник с минимальной зарплатой:");
-//        minSalary(employee);
-//        System.out.println("Сотрудник с максимальной зарплатой:");
-//        maxSalary(employee);
-//        System.out.println("Средняя зарплата в месяц:");
-//        avgSalary(employee);
-//        System.out.println("Получить Ф.И.О. всех сотрудников:");
-//        allEmployees(employee);
-//        System.out.println("Проиндексировать зарплату:");
-//        indexing(employee);
-//        System.out.println("Сотрудник отдела с минимальной зарплатой:");
-//        minSalaryInDepartment(employee, 3);
-//        System.out.println("Сотрудник отдела с максимальной зарплатой:");
-//        maxSalaryInDepartment(employee, 2);
-//        System.out.println("Сумма затрат на зарплату по отделу:");
-//        sumSalaryInDepartment(employee, 3);
-//        System.out.println("Средняя зарплата по отделу:");
-//        avgSalaryInDepartment(employee, 2);
-//        System.out.println("Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в качестве параметра:");
-//        indexSalaryInDepartment(employee,3, 5);
-//        System.out.println("Напечатать всех сотрудников отдела (все данные, кроме отдела):");
-//        printAllInDepartment(employee, 3);
-//        System.out.println("Напечатать всех сотрудников с зарплатой меньше числа:");
-//        allEmployeeLessSalary(employee, 70000);
-
+        System.out.println("Сотрудник с минимальной зарплатой:");
+        employeeBook.minSalary();
+        System.out.println("Сотрудник с максимальной зарплатой:");
+        employeeBook.maxSalary();
+        System.out.println("Средняя зарплата в месяц:");
+        employeeBook.avgSalary();
+        System.out.println("Получить Ф.И.О. всех сотрудников:");
+        employeeBook.allEmployees();
+        System.out.println("Проиндексировать зарплату:");
+        employeeBook.indexing();
+        System.out.println("Сотрудник отдела с минимальной зарплатой:");
+        employeeBook.minSalaryInDepartment(  3);
+        System.out.println("Сотрудник отдела с максимальной зарплатой:");
+        employeeBook.maxSalaryInDepartment(2);
+        System.out.println("Сумма затрат на зарплату по отделу:");
+        employeeBook.sumSalaryInDepartment(3);
+        System.out.println("Средняя зарплата по отделу:");
+        employeeBook.avgSalaryInDepartment(2);
+        System.out.println("Проиндексировать зарплату всех сотрудников отдела на процент, который приходит в качестве параметра:");
+        employeeBook.indexSalaryInDepartment(3, 5);
+        System.out.println("Напечатать всех сотрудников отдела (все данные, кроме отдела):");
+        employeeBook.printAllInDepartment( 3);
+        System.out.println("Напечатать всех сотрудников с зарплатой меньше числа:");
+        employeeBook.allEmployeeLessSalary(70000);
+    }}
 
