@@ -1,7 +1,10 @@
 package CourseWork1;
 
+import java.util.Arrays;
+
 public class EmployeeBook {
-    private  Employee[] employee;
+    private Employee[] employee;
+
     public EmployeeBook() {
         employee = new Employee[]{
                 new Employee("Сидр Лютый Прелютый", 1, 55000),
@@ -15,18 +18,21 @@ public class EmployeeBook {
                 new Employee("Илюха Верехов", 3, 15000),
                 new Employee("Семён Кандыба", 5, 25000)};
     }
-        public void getAllEmployees() {
-            for (Employee emp : employee) {
-                System.out.println(emp);
-            }
+
+    public void getAllEmployees() {
+        for (Employee emp : employee) {
+            System.out.println(emp);
         }
-        public void sumSalary( ) {
+    }
+
+    public void sumSalary() {
         double sum = 0;
         for (int i = 0; i < employee.length; i++) {
             sum = employee[i].getSalary() + sum;
         }
         System.out.println(sum);
     }
+
     public void minSalary() {
         double min = Double.MAX_VALUE;
         String name = null;
@@ -38,6 +44,7 @@ public class EmployeeBook {
         }
         System.out.println(name);
     }
+
     public void maxSalary() {
         double max = Double.MIN_VALUE;
         String name = null;
@@ -49,6 +56,7 @@ public class EmployeeBook {
         }
         System.out.println(name);
     }
+
     public void avgSalary() {
         double sum = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -62,12 +70,14 @@ public class EmployeeBook {
             System.out.print(emp.getFio() + " ");
         }
     }
+
     public void indexing() {
         for (Employee emp : employee) {
             System.out.printf("%.2f%n", emp.getSalary() * 1.08);
         }
     }
-    public   void minSalaryInDepartment(int department) {
+
+    public void minSalaryInDepartment(int department) {
         double min = Double.MAX_VALUE;
         ;
         String name = null;
@@ -81,6 +91,7 @@ public class EmployeeBook {
         }
         System.out.println(name + " " + min);
     }
+
     public void maxSalaryInDepartment(int department) {
         double min = Double.MIN_VALUE;
         ;
@@ -95,6 +106,7 @@ public class EmployeeBook {
         }
         System.out.println(name + " " + min);
     }
+
     public void sumSalaryInDepartment(int department) {
         double sum = 0;
         for (int i = 0; i < employee.length; i++) {
@@ -104,6 +116,7 @@ public class EmployeeBook {
         }
         System.out.println(sum);
     }
+
     public void avgSalaryInDepartment(int department) {
         double sum = 0;
         int employeeInDepartment = 0;
@@ -115,9 +128,9 @@ public class EmployeeBook {
         }
         System.out.println(sum / employeeInDepartment);
     }
+
     public void indexSalaryInDepartment(int department, int index) {
         double salary = 0;
-        int employeeInDepartment = 0;
         for (int i = 0; i < employee.length; i++) {
             if (department == employee[i].getDepartment()) {
                 salary = (employee[i].getSalary() * index / 100) + employee[i].getSalary();
@@ -125,6 +138,7 @@ public class EmployeeBook {
             }
         }
     }
+
     public void printAllInDepartment(int department) {
         for (Employee value : employee) {
             if (department == value.getDepartment()) {
@@ -132,6 +146,7 @@ public class EmployeeBook {
             }
         }
     }
+
     public void allEmployeeLessSalary(int salary) {
         for (Employee value : employee) {
             if (salary >= value.getSalary()) {
@@ -139,4 +154,20 @@ public class EmployeeBook {
             }
         }
     }
-}
+    public void addEmployee(String fio, int department, double salary) {
+        Employee newEmployee = new Employee(fio, department, salary);
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i] == null) {
+                employee[i] = newEmployee;
+            }
+        }
+        Employee[] newEmployeeArray = new Employee[employee.length + 1];
+            for (int  i = 0; i < employee.length; i++) {
+                newEmployeeArray[i] = employee[i];
+            }
+                newEmployeeArray[employee.length] = newEmployee;
+        employee = newEmployeeArray;
+            }
+        }
+
+

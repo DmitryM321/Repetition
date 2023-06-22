@@ -35,5 +35,9 @@ public class StartApp {
         employeeBook.printAllInDepartment( 3);
         System.out.println("Напечатать всех сотрудников с зарплатой меньше числа:");
         employeeBook.allEmployeeLessSalary(70000);
+        System.out.println("Добавить нового сотрудника:");
+        employeeBook.addEmployee("Леопольд Кудасов", 1, 205000);
+        employeeBook.getAllEmployees();
+
     }}
 
