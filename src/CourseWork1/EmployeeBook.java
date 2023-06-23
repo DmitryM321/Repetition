@@ -154,6 +154,7 @@ public class EmployeeBook {
             }
         }
     }
+
     public void addEmployee(String fio, int department, double salary) {
         Employee newEmployee = new Employee(fio, department, salary);
         for (int i = 0; i < employee.length; i++) {
@@ -162,12 +163,48 @@ public class EmployeeBook {
             }
         }
         Employee[] newEmployeeArray = new Employee[employee.length + 1];
-            for (int  i = 0; i < employee.length; i++) {
-                newEmployeeArray[i] = employee[i];
-            }
-                newEmployeeArray[employee.length] = newEmployee;
+        for (int i = 0; i < employee.length; i++) {
+            newEmployeeArray[i] = employee[i];
+        }
+        newEmployeeArray[employee.length] = newEmployee;
         employee = newEmployeeArray;
+    }
+
+    public void deleteEmployee(String fio) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFio().equals(fio)) {
+                employee[i] = null;
             }
         }
+    }
+    public void updateEmployee(String fio, int newSalary, int newDepartment) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFio().equals(fio)) {
+                employee[i].setSalary(newSalary) ;
+                employee[i].setDepartment(newDepartment);
+            }
+        }
+    }
+    public void getAllEmployeeAndDepartment() {
+        int departmentUn = 0;
+        for (int i = 0; i < employee.length; i++) {
+            for (int j = 0; j < employee.length - i - 1; j++) {
+                if (employee[j].getDepartment() > employee[j+1].getDepartment()) {
+                    Employee temp = employee[j];
+                    employee[j] = employee[j+1];
+                    employee[j+1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getDepartment() != departmentUn) {
+                departmentUn = employee[i].getDepartment();
+                System.out.println("Отдел " + departmentUn + ":");
+            }
+            System.out.println(employee[i].getFio());
+        }
+    }
+ }
+
 
 

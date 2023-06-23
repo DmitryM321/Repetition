@@ -38,6 +38,12 @@ public class StartApp {
         System.out.println("Добавить нового сотрудника:");
         employeeBook.addEmployee("Леопольд Кудасов", 1, 205000);
         employeeBook.getAllEmployees();
-
+        System.out.println("Удалить сотрудника:");
+    //    employeeBook.deleteEmployee("Илюха Верехов");
+        employeeBook.getAllEmployees();
+        System.out.println("Изменить сотрудника:");
+        employeeBook.updateEmployee("Леопольд Кудасов", 230000, 5);
+        employeeBook.getAllEmployees();
+        employeeBook.getAllEmployeeAndDepartment();
     }}
 
