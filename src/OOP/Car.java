@@ -11,9 +11,9 @@ public class Car {
     private final String bodyType;
     private String registrationNumber;
     private final int numberOfSeats;
-    boolean summerOrWinterTires;
+    boolean summerTires;
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int numberOfSeats, boolean summerOrWinterTires) {
+    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int numberOfSeats, boolean summerTires) {
         if(brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -54,7 +54,10 @@ public class Car {
         this.bodyType = bodyType;
         this.registrationNumber = registrationNumber;
         this.numberOfSeats = numberOfSeats;
-        this.summerOrWinterTires = summerOrWinterTires;
+        this.summerTires = summerTires;
+    }
+    public void setSummerTires(int month) {
+        this.summerTires = (month >= 4 && month <= 10);
     }
 
 
@@ -75,9 +78,6 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-    public void setSummerOrWinterTires(boolean summerOrWinterTires) {
-        this.summerOrWinterTires = summerOrWinterTires;
-    }
 
     public String getBrand() {
         return brand;
@@ -119,9 +119,7 @@ public class Car {
         return numberOfSeats;
     }
 
-    public boolean isSummerOrWinterTires() {
-        return summerOrWinterTires;
-    }
+
 
     @Override
     public String toString() {
@@ -136,7 +134,7 @@ public class Car {
                 ", bodyType='" + bodyType + '\'' +
                 ", registrationNumber='" + registrationNumber + '\'' +
                 ", numberOfSeats=" + numberOfSeats +
-                ", summerOrWinterTires=" + summerOrWinterTires +
+                ", summerOrWinterTires=" + summerTires +
                 '}';
     }
 
@@ -146,12 +144,12 @@ public class Car {
         Car car3 = new Car("BMW", "Z8", 3.0, "черный", 2021, "Германия", "автомат", "купе", "C789FG", 2, false);
         Car car4 = new Car("Kia", "Sportage", 2.4, "красный", 2018, "Южная Корея", "автомат", "внедорожник", "D101KL", 5, true);
         Car car5 = new Car("", "Avante", -1.6, null, 2016, "Южная Корея", "механика", "седан", "E111MN(**", 5, false);
+        car5.setSummerTires(5);
         System.out.println(car1);
         System.out.println(car2);
         System.out.println(car3);
         System.out.println(car4);
         System.out.println(car5);
-
         }
 }
 
