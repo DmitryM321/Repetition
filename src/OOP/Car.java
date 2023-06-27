@@ -1,75 +1,55 @@
 package OOP;
 
-public class Car {
-    private final String brand;
-    private final String model;
+import java.time.LocalDate;
+
+public class Car extends  Transport {
     private double engineVolume;
-    private String  color;
-    private final int year;
-    private final String country;
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
     private final int numberOfSeats;
     boolean summerTires;
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int numberOfSeats, boolean summerTires) {
-        if(brand == null || brand.isEmpty()) {
-            brand = "default";
+    public Car(String brand, String model, double engineVolume, String color, int year,
+               String country, String transmission, String bodyType, String registrationNumber,
+               int numberOfSeats, boolean summerTires, int maxSpeed) {
+        super(brand, model, year, country, color, maxSpeed);
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
         }
-        if(model == null || model.isEmpty()) {
-            model = "default";
+        if (transmission == null || transmission.isEmpty() || transmission.isBlank() || !transmission.matches("^[a-zA-Zа-яА-ЯёЁ]+$")) {
+            this.transmission = "default";
+        } else {
+            this.transmission = transmission;
         }
-        if(country == null || country.isEmpty()) {
-            country = "default";
+        if (bodyType == null || bodyType.isEmpty() || !bodyType.matches("^[a-zA-Zа-яА-ЯёЁ]+$")) {
+            this.bodyType = "default";
+        } else {
+            this.bodyType = bodyType;
         }
-        if(engineVolume <=0 ) {
-            engineVolume = 1.5;
+        if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank() || !registrationNumber.matches("^[a-zA-Zа-яА-ЯёЁ0-9]+$")) {
+            this.registrationNumber = "default";
+        } else {
+            this.registrationNumber = registrationNumber;
         }
-        if(color == null || color.isEmpty()) {
-            color = "белый";
+        if (numberOfSeats <= 0 || numberOfSeats >= 6) {
+            this.numberOfSeats = 0;
+        } else {
+            this.numberOfSeats = numberOfSeats;
         }
-        if(year <=0) {
-            engineVolume = 2000;
-        }
-        if(transmission == null || transmission.isEmpty() || transmission.isBlank() || !transmission.matches("^[a-zA-Zа-яА-ЯёЁ]+$")) {
-            transmission = "default";
-        }
-        if(bodyType == null || bodyType.isEmpty() || !bodyType.matches("^[a-zA-Zа-яА-ЯёЁ]+$")) {
-            bodyType = "default";
-        }
-        if(registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank() || !registrationNumber.matches("^[a-zA-Zа-яА-ЯёЁ0-9]+$")) {
-            registrationNumber = "default";
-        }
-        if(numberOfSeats <= 0 || numberOfSeats >= 6) {
-            numberOfSeats = 0;
-        }
-        this.brand = brand;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.year = year;
-        this.country = country;
-        this.transmission = transmission;
-        this.bodyType = bodyType;
-        this.registrationNumber = registrationNumber;
-        this.numberOfSeats = numberOfSeats;
         this.summerTires = summerTires;
     }
+
     public void setSummerTires(int month) {
         this.summerTires = (month >= 4 && month <= 10);
     }
 
 
-
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
     }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public void setTransmission(String transmission) {
         this.transmission = transmission;
     }
@@ -78,31 +58,9 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
     }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
     public String getTransmission() {
         return transmission;
     }
@@ -119,38 +77,63 @@ public class Car {
         return numberOfSeats;
     }
 
-
-
     @Override
     public String toString() {
         return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                ", color='" + color + '\'' +
-                ", year=" + year +
-                ", country='" + country + '\'' +
+                "brand='" + getBrand() + '\'' +
+                ", model='" + getModel() + '\'' +
+                ", year=" + getYear() +
+                ", country='" + getCountry() + '\'' +
+                ", color='" + getColor() + '\'' +
+                ", maxSpeed=" + getMaxSpeed() +'\'' +
+                " engineVolume=" + engineVolume +
                 ", transmission='" + transmission + '\'' +
                 ", bodyType='" + bodyType + '\'' +
                 ", registrationNumber='" + registrationNumber + '\'' +
                 ", numberOfSeats=" + numberOfSeats +
-                ", summerOrWinterTires=" + summerTires +
+                ", summerTires=" + summerTires +
                 '}';
     }
 
-    public static void main(String[] args) {
-        Car car1 = new Car("Lada", "Granta", 1.7, "желтый", 2015, "Россия", "механика", "седан", "A123BC", 5, false);
-        Car car2 = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 2020, "Германия", "автомат", "седан", "B456DE", 5, true);
-        Car car3 = new Car("BMW", "Z8", 3.0, "черный", 2021, "Германия", "автомат", "купе", "C789FG", 2, false);
-        Car car4 = new Car("Kia", "Sportage", 2.4, "красный", 2018, "Южная Корея", "автомат", "внедорожник", "D101KL", 5, true);
-        Car car5 = new Car("", "Avante", -1.6, null, 2016, "Южная Корея", "механика", "седан", "E111MN(**", 5, false);
-        car5.setSummerTires(5);
-        System.out.println(car1);
-        System.out.println(car2);
-        System.out.println(car3);
-        System.out.println(car4);
-        System.out.println(car5);
+    class Key {
+        private final boolean remoteEngineStart;
+        private final boolean keylessAccess;
+
+        Key(boolean remoteEngineStart, boolean keylessAccess) {
+            if ((remoteEngineStart != true && remoteEngineStart != false)
+                    || (keylessAccess != true && keylessAccess != false)) {
+                throw new IllegalArgumentException("Некорректные данные для параметров ключа!");
+            }
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
         }
+    }
+    class Insurance {
+        private final int number;
+        private final LocalDate dateInsurance;
+        Insurance(int number, LocalDate dateInsurance) {
+            if (number <= 0) {
+                throw new IllegalArgumentException("Number must be greater than 0");
+            }
+            if (dateInsurance == null || dateInsurance.isBefore(LocalDate.now()) || dateInsurance.isAfter(LocalDate.now().plusYears(1))) {
+                throw new IllegalArgumentException("Invalid insurance date");
+            }
+            this.number = number;
+            this.dateInsurance = dateInsurance;
+        }
+        public void testDateInsurance( ) {
+            if (LocalDate.now().isAfter(dateInsurance)) {
+                System.out.println("Нужно срочно ехать оформлять новую страховку");
+            }
+        }
+        public void testNumberInsurance( ) {
+            var length = String.valueOf(number).length();
+            if (!(length == 9)) {
+                System.out.println("Номер страховки некорректный!");
+            }
+        }
+    }
 }
+
 
 
