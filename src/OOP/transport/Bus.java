@@ -1,6 +1,7 @@
 package OOP.transport;
 
 import OOP.driver.BusDriver;
+import OOP.driver.Driver;
 
 public class Bus <T extends BusDriver> extends Transport {
     private T driver;
@@ -8,8 +9,17 @@ public class Bus <T extends BusDriver> extends Transport {
    public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
-    public void setDriver(T driver) {
-        this.driver = driver;
+    @Override
+    public void setDriver(Driver driver) {
+        super.setDriver(driver);
+    }
+    @Override
+    public Driver getDriver() {
+        return super.getDriver();
+    }
+    @Override
+    public void infoAboutDriverAndRace() {
+        System.out.println("водитель " + getDriver() + " управляет автомобилем " + getBrand() + " и будет участвовать в заезде");
     }
     @Override
     public String getBrand() {

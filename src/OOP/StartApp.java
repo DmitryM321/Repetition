@@ -30,12 +30,17 @@ public class StartApp {
         bus2.stopMoving();
         truck1.maximumSpeed();
         CarDriver carDriver1 = new CarDriver("Шарль ДеГоль", 22);
-        BusDriver busDriver = new BusDriver("Теодор Рузвельи", 33);
+        CarDriver carDriver2 = new CarDriver("Чан Кайши", 12);
+        BusDriver busDriver = new BusDriver("Теодор Рузвельт", 33);
         TruckDriver truckDriver = new TruckDriver("Уинстон Черчилль", 43);
         car1.setDriver(carDriver1);
-        System.out.println("водитель " + carDriver1 + " управляет автомобилем " + car1 + " и будет участвовать в заезде");
-     //   System.out.println("водитель " + carDriver + " управляет автомобилем " + truck3 + " и будет участвовать в заезде");
-    }
+        bus2.setDriver(busDriver);
+        bus2.setDriver(busDriver);
+        truck3.setDriver(truckDriver);
+        car1.infoAboutDriverAndRace();
+        bus2.infoAboutDriverAndRace();
+        truck3.infoAboutDriverAndRace();
+           }
 
 
     }

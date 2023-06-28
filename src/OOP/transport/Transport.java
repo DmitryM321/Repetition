@@ -1,18 +1,27 @@
 package OOP.transport;
 
 import OOP.Competing;
+import OOP.driver.Driver;
 
-public class Transport implements Competing {
+public class Transport  <T extends Driver> implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
+    T driver;
 
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
     }
-
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
+    public T getDriver() {
+        return driver;
+    }
+    void infoAboutDriverAndRace() {
+    }
     @Override
     public void pitStop() {
         Competing.super.pitStop();

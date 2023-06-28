@@ -1,15 +1,29 @@
 package OOP.transport;
 
 import OOP.driver.CarDriver;
+import OOP.driver.Driver;
 
 public class Car  <T extends CarDriver> extends Transport{
     private T driver;
     public Car(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
-    public void setDriver(T driver) {
-        this.driver = driver;
+
+    @Override
+    public void setDriver(Driver driver) {
+        super.setDriver(driver);
     }
+
+    @Override
+    public Driver getDriver() {
+        return super.getDriver();
+    }
+
+    @Override
+    public void infoAboutDriverAndRace() {
+        System.out.println("водитель " + getDriver() + " управляет автомобилем " + getBrand() + " и будет участвовать в заезде");
+    }
+
     @Override
     public void pitStop() {
         super.pitStop();
