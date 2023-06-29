@@ -40,9 +40,7 @@ public class StartApp {
         car1.infoAboutDriverAndRace();
         bus2.infoAboutDriverAndRace();
         truck3.infoAboutDriverAndRace();
-           }
-
-
-    }
+        }
+}
 
 
