@@ -2,9 +2,27 @@ package OOP.transport;
 
 import OOP.driver.CarDriver;
 import OOP.driver.Driver;
+import OOP.enums.BodyType;
 
 public class Car  <T extends CarDriver> extends Transport{
     private T driver;
+    private BodyType bodyType;
+    @Override
+    public void printType() {
+        if (getBodyType() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getBodyType());
+        }
+    }
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
     public Car(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }

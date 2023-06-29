@@ -3,9 +3,13 @@ package OOP;
 import OOP.driver.BusDriver;
 import OOP.driver.CarDriver;
 import OOP.driver.TruckDriver;
+import OOP.enums.BodyType;
+import OOP.enums.LoadCapacity;
 import OOP.transport.Bus;
 import OOP.transport.Car;
 import OOP.transport.Truck;
+
+import static OOP.enums.LoadCapacity.N2;
 
 public class StartApp {
     public static void main(String[] args) {
@@ -40,6 +44,11 @@ public class StartApp {
         car1.infoAboutDriverAndRace();
         bus2.infoAboutDriverAndRace();
         truck3.infoAboutDriverAndRace();
+        System.out.println("________________________");
+        truck3.setLoadCapacity(LoadCapacity.N2);
+        truck3.printType();
+        car1.setBodyType(BodyType.SEDAN);
+        car1.printType();
         }
 }
 

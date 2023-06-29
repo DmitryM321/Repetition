@@ -2,11 +2,29 @@ package OOP.transport;
 
 import OOP.driver.BusDriver;
 import OOP.driver.Driver;
+import OOP.enums.Capacity;
 
 public class Bus <T extends BusDriver> extends Transport {
     private T driver;
+    private Capacity capacity;
 
-   public Bus(String brand, String model, double engineVolume) {
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public void printType() {
+        if (getCapacity() == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(getCapacity());
+        }
+    }
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
+    public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
     @Override

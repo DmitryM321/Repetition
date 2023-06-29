@@ -8,7 +8,7 @@ public class Transport  <T extends Driver> implements Competing {
     private String model;
     private double engineVolume;
     T driver;
-
+    public void printType(){}
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
