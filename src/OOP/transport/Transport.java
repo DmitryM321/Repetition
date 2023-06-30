@@ -3,11 +3,14 @@ package OOP.transport;
 import OOP.Competing;
 import OOP.driver.Driver;
 
-public class Transport  <T extends Driver> implements Competing {
+public abstract class Transport  <T extends Driver> implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
     T driver;
+    public void getDiagnosed() {
+    }
+
     public void printType(){}
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;

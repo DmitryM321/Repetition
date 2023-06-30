@@ -12,6 +12,8 @@ public class Bus <T extends BusDriver> extends Transport {
         return capacity;
     }
 
+
+
     @Override
     public void printType() {
         if (getCapacity() == null) {

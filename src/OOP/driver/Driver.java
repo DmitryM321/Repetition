@@ -3,6 +3,7 @@ package OOP.driver;
 public class Driver {
     private String fio;
     private int experience;
+
     public Driver(String fio, int experience) {
         this.fio = fio;
         this.experience = experience;

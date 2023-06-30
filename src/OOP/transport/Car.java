@@ -7,6 +7,21 @@ import OOP.enums.BodyType;
 public class Car  <T extends CarDriver> extends Transport{
     private T driver;
     private BodyType bodyType;
+    public  void checkexpExperience(T driver) {
+        try {
+           if(driver.getExperience() <= 0);
+        } catch ( Exception e) {
+            System.out.println("Недостаточный опыт");
+        } finally {
+            System.out.println("Проверка завершена");
+        }
+    }
+
+    @Override
+    public void getDiagnosed() {
+        System.out.println("Автомобиль проходит диагностику");
+    }
+
     @Override
     public void printType() {
         if (getBodyType() == null) {

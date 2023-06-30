@@ -9,6 +9,11 @@ public class Truck <T extends TruckDriver> extends Transport {
     private  T driver;
     private LoadCapacity loadCapacity;
     @Override
+    public void getDiagnosed() {
+        System.out.println("Грузовик проходит диагностику");
+    }
+
+    @Override
     public void printType() {
         if (getLoadCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
