@@ -3,9 +3,6 @@ package OOP;
 import OOP.driver.BusDriver;
 import OOP.driver.CarDriver;
 import OOP.driver.TruckDriver;
-import OOP.enums.BodyType;
-import OOP.enums.LoadCapacity;
-import OOP.transport.Bus;
 import OOP.transport.Car;
 import OOP.transport.Truck;
 
@@ -14,7 +11,7 @@ public class StartApp {
 //        Bus bus1 = new Bus("Volvo", "9500", 10.0);
 //        Bus bus2 = new Bus("Mercedes-Benz", "Citaro", 11.5);
 //        Bus bus3 = new Bus("MAN", "Lion's City", 12.0);
-//        Truck truck1 = new Truck("Scania", "R500", 16.0);
+        Truck truck1 = new Truck("Scania", "R500", 16.0);
 //        Truck truck2 = new Truck("Volvo", "FH16", 17.0);
 //        Truck truck3 = new Truck("Mercedes-Benz", "Actros", 15.6);
 
@@ -24,20 +21,10 @@ public class StartApp {
         CarDriver carDriver1 = new CarDriver("Шарль ДеГоль", -22);
         CarDriver carDriver2 = new CarDriver("Чан Кайши", 12);
         BusDriver busDriver = new BusDriver("Теодор Рузвельт", 33);
-        TruckDriver truckDriver = new TruckDriver("Уинстон Черчилль", 43);
+        TruckDriver truckDriver = new TruckDriver("Уинстон Черчилль", -43);
         car1.setDriver(carDriver1);
-        car1.checkexpExperience(carDriver1);
-//        bus2.setDriver(busDriver);
-//        bus2.setDriver(busDriver);
-//        truck3.setDriver(truckDriver);
-        car1.infoAboutDriverAndRace();
-//        bus2.infoAboutDriverAndRace();
-//        truck3.infoAboutDriverAndRace();
-//        System.out.println("________________________");
-//        truck3.setLoadCapacity(LoadCapacity.N2);
-//        truck3.printType();
-//        car1.setBodyType(BodyType.HATCHBACK);
-//        car1.printType();
+        car1.checkExperience(carDriver1);
+        truck1.checkExperience(truckDriver);
         }
 }
 

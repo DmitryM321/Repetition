@@ -1,5 +1,6 @@
 package OOP.transport;
 
+import OOP.NegativeExperienceException;
 import OOP.driver.BusDriver;
 import OOP.driver.Driver;
 import OOP.enums.Capacity;
@@ -11,7 +12,17 @@ public class Bus <T extends BusDriver> extends Transport {
     public Capacity getCapacity() {
         return capacity;
     }
-
+    public void checkExperience(T driver) {
+        try {
+            if (driver.getExperience() <= 0) {
+                throw new NegativeExperienceException("Недостаточный опыт3");
+            }
+        } catch (NegativeExperienceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Проверка завершена");
+        }
+    }
 
 
     @Override

@@ -1,5 +1,6 @@
 package OOP.transport;
 
+import OOP.NegativeExperienceException;
 import OOP.driver.CarDriver;
 import OOP.driver.Driver;
 import OOP.driver.TruckDriver;
@@ -8,6 +9,17 @@ import OOP.enums.LoadCapacity;
 public class Truck <T extends TruckDriver> extends Transport {
     private  T driver;
     private LoadCapacity loadCapacity;
+    public void checkExperience(T driver) {
+        try {
+            if (driver.getExperience() <= 0) {
+                throw new NegativeExperienceException("Недостаточный опыт2");
+            }
+        } catch (NegativeExperienceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Проверка завершена");
+        }
+    }
     @Override
     public void getDiagnosed() {
         System.out.println("Грузовик проходит диагностику");

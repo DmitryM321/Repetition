@@ -1,5 +1,6 @@
 package OOP.transport;
 
+import OOP.NegativeExperienceException;
 import OOP.driver.CarDriver;
 import OOP.driver.Driver;
 import OOP.enums.BodyType;
@@ -7,16 +8,18 @@ import OOP.enums.BodyType;
 public class Car  <T extends CarDriver> extends Transport{
     private T driver;
     private BodyType bodyType;
-    public  void checkexpExperience(T driver) {
+
+    public void checkExperience(T driver) {
         try {
-           if(driver.getExperience() <= 0);
-        } catch ( Exception e) {
-            System.out.println("Недостаточный опыт");
+            if (driver.getExperience() <= 0) {
+                throw new NegativeExperienceException("Недостаточный опыт1");
+            }
+        } catch (NegativeExperienceException e) {
+            System.out.println(e.getMessage());
         } finally {
             System.out.println("Проверка завершена");
         }
     }
-
     @Override
     public void getDiagnosed() {
         System.out.println("Автомобиль проходит диагностику");
