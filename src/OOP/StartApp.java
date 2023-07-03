@@ -3,21 +3,31 @@ package OOP;
 import OOP.driver.BusDriver;
 import OOP.driver.CarDriver;
 import OOP.driver.TruckDriver;
+import OOP.transport.Bus;
 import OOP.transport.Car;
 import OOP.transport.Truck;
 
-public class StartApp {
-    public static void main(String[] args) {
-//        Bus bus1 = new Bus("Volvo", "9500", 10.0);
-//        Bus bus2 = new Bus("Mercedes-Benz", "Citaro", 11.5);
-//        Bus bus3 = new Bus("MAN", "Lion's City", 12.0);
-        Truck truck1 = new Truck("Scania", "R500", 16.0);
-//        Truck truck2 = new Truck("Volvo", "FH16", 17.0);
-//        Truck truck3 = new Truck("Mercedes-Benz", "Actros", 15.6);
+import java.util.ArrayList;
+import java.util.List;
 
-//        Car car2 = new Car("Chevrolet", "Camaro", 6.2);
-//        Car car3 = new Car("Toyota", "Corolla", 1.8);
-        Car car1 = new Car("Kia", "Sportage", 2.4);
+public class StartApp {
+    public static void main(String[] args) {пш
+        List<Bus> buses = new ArrayList<>();
+        buses.add(new Bus("Volvo", "9500", 10.0));
+        buses.add(new Bus("Mercedes-Benz", "Citaro", 12.0));
+        buses.add(new Bus("MAN", "Lion's City", 9.0));
+
+        List<Truck> trucks = new ArrayList<>();
+        trucks.add(new Truck("Scania", "R500", 15.0));
+        trucks.add(new Truck("Kia", "FH16", 16.0));
+        trucks.add(new Truck("Chevrolet", "Actros", 13.0));
+
+        List<Car> cars = new ArrayList<>();
+        cars.add(new Car("Toyota", "Camaro", 2.0));
+        cars.add(new Car("Kia", "Corolla", 1.8));
+        cars.add(new Car("Chevrolet", "Sportage", 2.2))
+
+
         CarDriver carDriver1 = new CarDriver("Шарль ДеГоль", -22);
         CarDriver carDriver2 = new CarDriver("Чан Кайши", 12);
         BusDriver busDriver = new BusDriver("Теодор Рузвельт", 33);
