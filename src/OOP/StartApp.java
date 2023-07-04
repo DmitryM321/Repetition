@@ -40,8 +40,8 @@ public class StartApp {
         mechanic.repair(truck2);
 
         car2.setDriver(carDriver2);
-        car2.getDriver();
-        mechanic.getTransportList();
+        System.out.println(car2.getDriver());
+        System.out.println(mechanic.getTransportList() + " имя механика " + mechanic.getFio());
 
 
 //        BusDriver busDriver = new BusDriver("Теодор Рузвельт", 33);
