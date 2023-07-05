@@ -5,6 +5,7 @@ import OOP.transport.Transport;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Mechanic <T extends Transport> {
     private String fio;
@@ -59,6 +60,26 @@ public class Mechanic <T extends Transport> {
 
     public void removeTransport(T transport) {
         transportList.remove(transport);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return Objects.equals(fio, mechanic.fio) && Objects.equals(nameCompany, mechanic.nameCompany) && Objects.equals(transportList, mechanic.transportList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio, nameCompany, transportList);
+    }
+    @Override
+    public String toString() {
+        return "Mechanic{" +
+                "fio='" + fio + '\'' +
+                ", nameCompany='" + nameCompany + '\'' +
+                '}';
     }
 }
 

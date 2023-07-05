@@ -5,6 +5,8 @@ import OOP.driver.CarDriver;
 import OOP.driver.Driver;
 import OOP.enums.BodyType;
 
+import java.util.Objects;
+
 public class Car  <T extends CarDriver> extends Transport{
     private T driver;
     private BodyType bodyType;
@@ -92,7 +94,21 @@ public class Car  <T extends CarDriver> extends Transport{
                 ", model='" + getModel() + '\'' +
                 ", engineVolume=" + getEngineVolume();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car<?> car = (Car<?>) o;
+        return Objects.equals(driver, car.driver) && bodyType == car.bodyType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(driver, bodyType);
+    }
 }
+
 //    private double engineVolume;
 //    private String transmission;
 //    private final String bodyType;

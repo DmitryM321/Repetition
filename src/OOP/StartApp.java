@@ -7,8 +7,7 @@ import OOP.transport.Bus;
 import OOP.transport.Car;
 import OOP.transport.Truck;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class StartApp {
     public static void main(String[] args) {
@@ -25,28 +24,39 @@ public class StartApp {
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Toyota", "Camaro", 2.0));
         cars.add(new Car("Kia", "Corolla", 1.8));
-        Car car2 = new Car("Chevrolet", "Sportage", 2.2);
+   //     Car car2 = new Car("Chevrolet", "Sportage", 2.2);
 
 
         List<CarDriver> carDrivers = new ArrayList<>();
         carDrivers.add(new CarDriver("Шарль ДеГоль", -22));
         carDrivers.add(new CarDriver("Чан Кайши", 12));
         CarDriver carDriver2 = new CarDriver("Теодор Рузвельт", 33);
-        Mechanic mechanic = new Mechanic("Джорж Буш", "Tesla");
-        mechanic.addTransport(car2);
-        mechanic.repair(car2);
-        mechanic.performMaintenance(car2);
-        mechanic.addTransport(truck2);
-        mechanic.repair(truck2);
 
-        car2.setDriver(carDriver2);
-        System.out.println(car2.getDriver());
-        System.out.println(mechanic.getTransportList() + " имя механика " + mechanic.getFio());
+        Map<Car, Mechanic> mechanics = new HashMap<>();
+        for (Car car : cars) {
+            mechanics.put(car, new Mechanic("Джорж Буш", "Tesla"));
+            mechanics.put(car, new Mechanic("Генерал Грант", "Конфедерация"));
+        }
+        for (Map.Entry<Car, Mechanic> entry : mechanics.entrySet()) {
+            Car car = entry.getKey();
+            Mechanic mechanic = entry.getValue();
+            System.out.println("Машина: " + car + ", Механик: " + mechanic);
+        }
+    }
+}
+
+//        mechanics.addTransport(car2);
+//        mechanic.repair(car2);
+//        mechanic.performMaintenance(car2);
+//        mechanic.addTransport(truck2);
+//        mechanic.repair(truck2);
+
+
+      //  System.out.println(mechanic.getTransportList() + " имя механика " + mechanic.getFio());
 
 
 //        BusDriver busDriver = new BusDriver("Теодор Рузвельт", 33);
 //        TruckDriver truckDriver = new TruckDriver("Уинстон Черчилль", -43);
-        }
-}
+
 
 
