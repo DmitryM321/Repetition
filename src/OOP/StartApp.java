@@ -24,26 +24,28 @@ public class StartApp {
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Toyota", "Camaro", 2.0));
         cars.add(new Car("Kia", "Corolla", 1.8));
-   //     Car car2 = new Car("Chevrolet", "Sportage", 2.2);
+        //     Car car2 = new Car("Chevrolet", "Sportage", 2.2);
 
 
-        List<CarDriver> carDrivers = new ArrayList<>();
+//        List<CarDriver> carDrivers = new ArrayList<>();
+//        carDrivers.add(new CarDriver("Шарль ДеГоль", -22));
+//        carDrivers.add(new CarDriver("Чан Кайши", 12));
+//        CarDriver carDriver2 = new CarDriver("Теодор Рузвельт", 33);
+
+        Set<CarDriver> carDrivers = new HashSet<>();
+
         carDrivers.add(new CarDriver("Шарль ДеГоль", -22));
         carDrivers.add(new CarDriver("Чан Кайши", 12));
-        CarDriver carDriver2 = new CarDriver("Теодор Рузвельт", 33);
+        carDrivers.add(new CarDriver("Чан Кайши", 12));
 
-        Map<Car, Mechanic> mechanics = new HashMap<>();
-        for (Car car : cars) {
-            mechanics.put(car, new Mechanic("Джорж Буш", "Tesla"));
-            mechanics.put(car, new Mechanic("Генерал Грант", "Конфедерация"));
-        }
-        for (Map.Entry<Car, Mechanic> entry : mechanics.entrySet()) {
-            Car car = entry.getKey();
-            Mechanic mechanic = entry.getValue();
-            System.out.println("Машина: " + car + ", Механик: " + mechanic);
+        Iterator<CarDriver> iterator = carDrivers.iterator();
+        while (iterator.hasNext()) {
+            CarDriver driver = iterator.next();
+            System.out.println(driver);
         }
     }
 }
+
 
 //        mechanics.addTransport(car2);
 //        mechanic.repair(car2);

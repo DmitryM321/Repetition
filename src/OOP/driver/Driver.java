@@ -1,5 +1,7 @@
 package OOP.driver;
 
+import java.util.Objects;
+
 public class Driver {
     private String fio;
     private int experience;
@@ -40,5 +42,18 @@ public class Driver {
                 "fio='" + fio + '\'' +
                 ", experience=" + experience +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return experience == driver.experience && Objects.equals(fio, driver.fio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio, experience);
     }
 }
