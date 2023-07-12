@@ -3,6 +3,7 @@ package Lambda;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class labmdas {
     public static void main(String[] args) {
@@ -36,6 +37,26 @@ public class labmdas {
         System.out.println(number.apply(2.2));
         Function<Double, Long> number12 = number1 -> Math.round(number1);
         System.out.println(number12.apply(3.3));
+
+        Supplier<Integer> random = new Supplier<Integer>() {
+            @Override
+            public Integer get() {
+                return (int) (Math.random()*100);
+            }
+        };
+        System.out.println(random.get());
+        Supplier<Integer> random1 =() -> (int) (Math.random()*100);
+        System.out.println(random1.get());
+
+
+        public static <T, U> Function<T, U> ternaryOperator(
+                     Predicate<? super T> condition,
+                     Function<? super T, ? extends U> ifTrue,
+                     Function<? super T, ? extends U> ifFalse) {
+
+
+
+        }
     }
 }
 
