@@ -1,5 +1,6 @@
 package Stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -9,12 +10,14 @@ import java.util.stream.Stream;
 
 public class Stream1 {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(5, 10, 2, 8, 3);
-
+        List<Integer> numbers = Arrays.asList(5, 10, 2, 8, 3, 444);
+        System.out.println("Задание 1");
         findMinMax(numbers.stream(), Integer::compareTo, (min, max) -> {
             System.out.println("Min: " + min);
             System.out.println("Max: " + max);
         });
+        System.out.println("Задание 2");
+        finMEven(numbers);
     }
     public static <T> void findMinMax(
             Stream<? extends T> stream,
@@ -29,6 +32,7 @@ public class Stream1 {
             minMaxConsumer.accept(null, null);
         }
     }
-
-        
+    public static void finMEven(List<Integer> numbers) {
+        System.out.println("Четных " + numbers.stream().filter(i -> i %2 == 0).count());
+    }
     }
