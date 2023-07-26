@@ -37,8 +37,20 @@ public class Tasks1 {
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println(listAll3);
-        System.out.println("2.4_____________________");
-
+// 3. Задача: Дан список строк. Необходимо найти и вывести самую длинную строку из списка.
+        System.out.println("3____________________");
+        List<String> strings = new ArrayList<>();
+        strings.add("Hello");
+        strings.add("Java");
+        strings.add("Collections");
+        strings.add("World");
+        String longest = "";
+        for (String str : strings) {
+            if (str.length() > longest.length()) {
+                longest = str;
+            }
+        }
+        System.out.println("Самая длинная строка: " + longest);
     }
 }
 
