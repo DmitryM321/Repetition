@@ -13,7 +13,7 @@ public class Task {
     private String description;
     private LocalDateTime dataTime;
 
-    public Task(String title, Type type, int id, String description, LocalDateTime dataTime) {
+    public Task(String title, Type type, String description, LocalDateTime dataTime) {
         this.title = title;
         this.type = type;
         this.id = idGenerator++;
@@ -74,11 +74,20 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return id == task.id && Objects.equals(title, task.title) && type == task.type && Objects.equals(description, task.description) && Objects.equals(dataTime, task.dataTime);
+        return id == task.id && Objects.equals(title, task.title) && Objects.equals(type, task.type) && Objects.equals(dataTime, task.dataTime) && Objects.equals(description, task.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, type, id, description, dataTime);
+        return Objects.hash(title, type, id, dataTime, description);
+    }
+
+    @Override
+    public String toString() {
+        return "Задача: " + title +
+                ", type: " + type +
+                ", id: " + id +
+                ", dataTime " + dataTime +
+                ", описание " + description;
     }
 }

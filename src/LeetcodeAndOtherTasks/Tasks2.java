@@ -12,7 +12,6 @@ public class Tasks2 {
             frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
         }
         System.out.println(frequencyMap);
-        System.out.println("___________________________");
         // Напишите программу, которая создает Map со строковыми ключами и целочисленными
 // значениями. Затем отсортируйте эту Map по значению в порядке возрастания и выведите результат.
         Map<String, Integer> map = new HashMap<>();
@@ -27,6 +26,8 @@ public class Tasks2 {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
         System.out.println(sortedMap);
+
+
 // Напишите программу, которая объединяет две Map, то есть добавляет все элементы одной Map в другую Map.
 // Если ключи уже существуют в целевой Map, значения заменяются.
         Map<String, Integer> map1 = new HashMap<>();
