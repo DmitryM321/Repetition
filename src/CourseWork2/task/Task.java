@@ -1,11 +1,13 @@
 package CourseWork2.task;
 
 import CourseWork2.enums.Type;
+import CourseWork2.exeption.IncorrectArgumentExeption;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Task {
+public abstract class Task {
     private static int idGenerator = 0;
     private String title;
     private Type type;
@@ -14,13 +16,13 @@ public class Task {
     private LocalDateTime dataTime;
 
     public Task(String title, Type type, String description, LocalDateTime dataTime) {
-        this.title = title;
+        setTitle(title);
         this.type = type;
         this.id = idGenerator++;
-        this.description = description;
+        setDescription(description);
         this.dataTime = dataTime;
     }
-
+    public abstract boolean appearsln(LocalDate localDate);
     public static int getIdGenerator() {
         return idGenerator;
     }
@@ -33,8 +35,12 @@ public class Task {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String title) throws IncorrectArgumentExeption {
+        if((title == null || title.isBlank() || title.isEmpty())) {
+            throw new RuntimeException("Проблемы с заголовком");
+        } else {
+            this.title = title;
+        }
     }
 
     public Type getType() {
@@ -57,8 +63,12 @@ public class Task {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String description) throws IncorrectArgumentExeption {
+        if((description == null || description.isBlank() || description.isEmpty())) {
+            throw new RuntimeException("Проблемы с описанием задачи");
+        } else {
+            this.description = description;
+        }
     }
 
     public LocalDateTime getDataTime() {
