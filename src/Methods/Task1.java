@@ -13,6 +13,7 @@ public class Task1 {
         Scanner sc = new Scanner(System.in);
         int year = sc.nextInt();
         leapYear(year);
+        sc.close();
     }
     }
 

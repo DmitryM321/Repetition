@@ -22,7 +22,8 @@ public abstract class Task {
         setDescription(description);
         this.dataTime = dataTime;
     }
-    public abstract boolean appearsln(LocalDate localDate);
+   public abstract boolean appearsln(LocalDate localDate);
+   
     public static int getIdGenerator() {
         return idGenerator;
     }
