@@ -24,7 +24,9 @@ public class TaskService {
 
     public void remove(int id) throws TaskNotFoundExeption {
         if (taskMap.containsKey(id)) {
+            Task removedTask = taskMap.get(id);
             taskMap.remove(id);
+            removesTask.add(removedTask);
         } else {
             throw new TaskNotFoundExeption();
         }
@@ -38,6 +40,11 @@ public class TaskService {
         }
         return list;
     }
+    public Collection<Task> getRemovedasks(){
+         
+        return removesTask;
+    }
+
 
     @Override
     public String toString() {

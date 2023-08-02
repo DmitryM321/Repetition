@@ -9,6 +9,7 @@ import CourseWork2.task.Task;
 import CourseWork2.task.WeeklyTask;
 import CourseWork2.task.YearlyTask;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -48,5 +49,9 @@ tasks = taskService.getAllByDay(LocalDateTime.of(2024, 03, 15, 12, 12));
   for (Task task : tasks) {
     System.out.println(task);
 }
+System.out.println("_____________________");
+     System.out.println(taskService.getRemovedasks());
+
+
     }
 }
