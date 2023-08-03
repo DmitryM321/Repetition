@@ -44,7 +44,14 @@ public class TaskService {
          
         return removesTask;
     }
-
+    public Task updateDiscription(int id, String description){
+        if (taskMap.containsKey(id)) {
+            Task task = taskMap.get(id);
+            task.setDescription(description);
+            return task;
+        }
+        return null;
+    }
 
     @Override
     public String toString() {

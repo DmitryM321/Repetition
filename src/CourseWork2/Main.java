@@ -51,7 +51,11 @@ tasks = taskService.getAllByDay(LocalDateTime.of(2024, 03, 15, 12, 12));
 }
 System.out.println("_____________________");
      System.out.println(taskService.getRemovedasks());
-
+     System.out.println("__________Изменение описания___________");
+taskService.updateDiscription(3, "Изменение задачи");
+for (Task task : tasks) {
+    System.out.println(task);
+}
 
     }
 }
