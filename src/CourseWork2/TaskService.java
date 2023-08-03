@@ -3,6 +3,7 @@ package CourseWork2;
 import CourseWork2.exeption.TaskNotFoundExeption;
 import CourseWork2.task.Task;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -52,7 +53,29 @@ public class TaskService {
         }
         return null;
     }
-
+    public Task updateTitleTask(int id, String title){
+        if (taskMap.containsKey(id)) {
+            Task task = taskMap.get(id);
+            task.setTitle(title); 
+            return task;
+        }
+        return null;
+    }
+    public Map<LocalDate, Collection<Task>> getAllGroupeByDay(){
+        Map<LocalDate, Collection<Task>> groupedTasks = new HashMap<>();
+        for (Task task : taskMap.values()) {
+            LocalDate date = task.getDataTime().toLocalDate();
+            if (groupedTasks.containsKey(date)) {
+                
+                groupedTasks.get(date).add(task);
+            } else {
+                ArrayList<Task> list = new ArrayList<Task>();
+                list.add(task);
+                groupedTasks.put(date, list);
+            }
+        }
+        return groupedTasks;
+    }
     @Override
     public String toString() {
         return "TaskService [taskMap=" + taskMap + ", removesTask=" + removesTask + "]";

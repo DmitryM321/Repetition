@@ -56,6 +56,13 @@ taskService.updateDiscription(3, "Изменение задачи");
 for (Task task : tasks) {
     System.out.println(task);
 }
+ System.out.println("__________Изменение заголовка__________");
+taskService.updateTitleTask(3, "Вот не задача");
+for (Task task : tasks) {
+    System.out.println(task );
+}
+System.out.println("__________Группировка по датам__________");
+System.out.println(taskService.getAllGroupeByDay() );
 
     }
 }
