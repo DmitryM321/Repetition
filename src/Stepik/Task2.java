@@ -18,6 +18,14 @@ public class Task2 {
         int d2 = d1.intValue();
         System.out.println(d2);
 
+        long toString1 = Long.parseLong("12345");
+        System.out.println(toString1);
+        String fromNumber = Long.toString(toString1);
+        System.out.println(fromNumber);
+        int value1 = 0;
+        System.out.println(isPowerOfTwo(value1));
+        System.out.println(Integer.bitCount(32333));
+
     }
     public static boolean doubleExpression(double a, double b, double c) {
         boolean d;
@@ -25,18 +33,14 @@ public class Task2 {
         return d;
     }
 
-/**
- * Flips one bit of the given <code>value</code>.
- *
- * @param value     any number
- * @param bitIndex  index of the bit to flip, 1 <= bitIndex <= 32
- * @return new value with one bit flipped
- 13 = 8+4+1 = 1000 + 100+ 1
- */
+ 
 public static int flipBit(int value, int bitIndex) {
     return  value << (bitIndex -1);
 }
-
+public static boolean isPowerOfTwo(int value1) {
+    int a = Math.abs(value1);
+return Integer.bitCount(a) == 1;
+}
 
 
 }
