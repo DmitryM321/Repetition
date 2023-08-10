@@ -1,32 +1,51 @@
 package Robot;
 
 public class Robot {
-public static void main(String[] args) {
-    //начальное состояние робота такое: robot.getX() == 0, robot.getY() == 0, robot.getDirection() == Direction.UP
-    // В метод передано: toX == 3, toY == 0;
-}
-public static void moveRobot(Robot robot, int toX, int toY) {
+    private Direction direction;
+    private int x;
+    private int y;
 
+    public Robot(Direction direction, int x, int y) {
+        this.direction = direction;
+        this.x = x;
+        this.y = y;
+    }
 
-    robot.stepForward(); // your implementation here
-}
+    public static void main(String[] args) {
+        Robot robot = new Robot(Direction.UP, 0, 0);
+        int toX = 3;
+        int toY = 0;
+        moveRobot(robot, toX, toY);
+        System.out.println(robot.getX()); // Вывод координат робота после выполнения метода
+        System.out.println(robot.getY());
 
-    public Direction getDirection() {
-        return Direction.UP;
+    }   
+
+    public static void moveRobot(Robot robot, int toX, int toY) {
+     while (robot.getX() != toX || robot.getY() != toY){
+        if (robot.getX() < toX){
+
+        }
+
+     }
+
+    public static Direction getDirection(Direction up) {
+        return Direction;
         // текущее направление взгляда
     }
 
     public int getX() {
-        return 0;
+        return x;
         // текущая координата X
     }
 
     public int getY() {
-        return 0;
+        return y;
         // текущая координата Y
     }
 
     public void turnLeft() {
+
         // повернуться на 90 градусов против часовой стрелки
     }
 
@@ -35,8 +54,14 @@ public static void moveRobot(Robot robot, int toX, int toY) {
     }
 
     public void stepForward() {
+        if (Direction == Direction.RIGHT) {
+            x = x + 1;
+        }
+        if (Direction == Direction.UP) {
+            y = y + 1;
+        }
+
         // шаг в направлении взгляда
         // за один шаг робот изменяет одну свою координату на единицу
     }
 }
-
