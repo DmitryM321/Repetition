@@ -19,8 +19,6 @@ String input3 = "Hello, World! Welcome to Java.";
         for (String word : words) {
             System.out.println(word);
         }
-
-
         }
     
         public static int countCharacters(String input) {
@@ -36,6 +34,8 @@ String input3 = "Hello, World! Welcome to Java.";
         String result2 = input.replace(target, replacement);
         return result2;
     }
-    
+    public static String[] splitString(String input) {
+        return input.split(" ");
+    }
 }
 
