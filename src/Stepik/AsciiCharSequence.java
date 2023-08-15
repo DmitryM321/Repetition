@@ -1,33 +1,31 @@
 package Stepik;
 
-public class AsciiCharSequence implements CharSequence{
-    private int[] bytes;
+public class AsciiCharSequence implements CharSequence {
+    private byte[] bytes;
 
-    public AsciiCharSequence(int[] bytes) {
+    public AsciiCharSequence(byte[] bytes) {
         this.bytes = bytes;
     }
 
     @Override
-    public char charAt(int arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'charAt'");
+    public char charAt(int index) {
+        return (char) bytes[index];
     }
 
     @Override
     public int length() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'length'");
+        return bytes.length;
     }
 
     @Override
-    public CharSequence subSequence(int arg0, int arg1) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'subSequence'");
+    public CharSequence subSequence(int start, int end) {
+        byte[] subBytes = Arrays.copyOfRange(bytes, start, end);
+        return new AsciiCharSequence(subBytes);
     }
 
     @Override
     public String toString() {
-        return "AsciiCharSequence []";
+        return new String(bytes);
     }
     
 }
