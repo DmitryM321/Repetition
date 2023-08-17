@@ -5,13 +5,12 @@ package Stepik.SpamAnalyzer;
 
 public class Main  {
   public static void main(String[] args) {
-    String text = ":( + :| + smile";
-     
+   // String text = ":( + :| + smile";
+     String text = "smile + \"1";
     TextAnalyzer[] analyzers = {
-      new SpamAnalyzer(new String[]{"отвественность", "стрессоустойчивость", "коммуникабельность"}),
-      new NegativeTextAnalyzer(),
-      new TooLongTextAnalyzer(),
-   //   new KeywordAnalyzer()
+      new Main().new SpamAnalyzer(new String[] {"1", "2"}),
+      new Main().new NegativeTextAnalyzer(),
+      new Main().new TooLongTextAnalyzer(), 
 };
   
 Label label = checkLabels(analyzers, text);
