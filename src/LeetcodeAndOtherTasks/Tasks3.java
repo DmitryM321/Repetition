@@ -26,6 +26,21 @@ public class Tasks3 {
         String[] words = a.split("\\s+");
         int count = words.length;
         System.out.println("Количество слов: " + count);
-    }
+    
+    System.out.println("21.08");
+ // Задача: Написать программу, которая выводит на экран заданную строку заданное количество раз.
+            String message = "Hello, World!";
+            int repeatCount = 5;
+            for (int i = 0; i < repeatCount; i++) {
+                System.out.println(message);
+            }
+    // Написать программу, которая считает сумму всех чисел от 1 до 100 и выводит ее на экран.
+   // int x = 1;
+    int sum = 0;
+    for(int i =1; i <=100; i++ )   {
+        sum = sum +i; 
+    }     
+    System.out.println(sum);
+}
 }
 
