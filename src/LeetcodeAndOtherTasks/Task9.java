@@ -1,5 +1,7 @@
 package LeetcodeAndOtherTasks;
 
+import java.util.HashSet;
+
 public class Task9 {
     public static void main(String[] args) {
  // Задача 1: Перевернуть строку. Описание: Напишите программу, которая переворачивает заданную строку.
@@ -25,8 +27,23 @@ for (int i = 0; i < strr.length; i++) {
   }
 }
 System.out.println(count);
+//  Напишите программу, которая находит и выводит все повторяющиеся символы в заданной строке.
+String hello7 =  "Hello, World!";
+HashSet<Character> set = new HashSet<>();
+HashSet<Character> duplicateSet = new HashSet<>();
 
-}}
+for (int i = 0; i < hello7.length(); i++) {
+    char a = hello7.charAt(i);
+    if (!set.contains(a)) {
+        set.add(a);
+    } else {
+        duplicateSet.add(a);
+    }
+}
 
+for (char duplicateChar : duplicateSet) {
+    System.out.print(duplicateChar + ", ");
+}
+    }}
 
 
