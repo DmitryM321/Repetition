@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class Task10 {
     public static void main(String[] args) {     
@@ -42,8 +43,34 @@ public class Task10 {
             }
         }
     System.out.println(occurrenceMap);
+    //  Найти наиболее часто встречающийся элемент в массиве.
+        int[] array2 = {2, 2, 7, 2, 4, 2, 7, 5};
+         Map<Integer, Integer> offen = new HashMap<>();
+        int mostFrequentElement = 0;
+        int maxFrequency = 0;
+
+        for (int num : array2) {
+            if (offen.containsKey(num)) {
+                int frequency = offen.get(num) + 1;
+                offen.put(num, frequency);
+
+                if (frequency > maxFrequency) {
+                    maxFrequency = frequency;
+                    mostFrequentElement = num;
+                }
+            } else {
+                offen.put(num, 1);
+                if (maxFrequency == 0) {
+                    maxFrequency = 1;
+                    mostFrequentElement = num;
+                }
+            }
+        }
+        System.out.println("Частый элемент " + mostFrequentElement);
+    }
 }
-}
+
+
 
 //  //    Найти среднее значение элементов в массиве с плавающей запятой
 //        double[] m = {1.3, 7.6, 6.4, 8.9, 25.15, 19.18};
