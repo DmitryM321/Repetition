@@ -1,4 +1,4 @@
-package LeetcodeAndOtherTasks;
+package LeetcodeAndOtherTasks.RandomTasks;
 
 import java.util.HashSet;
 

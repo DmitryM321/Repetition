@@ -1,4 +1,4 @@
-package LeetcodeAndOtherTasks;
+package LeetcodeAndOtherTasks.RandomTasks;
 
 public class Task7 {
     public static void main(String[] args) {
