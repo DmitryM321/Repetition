@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collector;
@@ -39,5 +40,11 @@ Optional<Integer> maxValue = numbers3.stream()
 int maxValue2 = numbers3.stream()
         .max((n1, n2)-> n1.compareTo(n2)).get();
         System.out.println(maxValue2);
+// Повторяющийся элемент в коллекции. Сколько раз повторяется
+        List<String> letters = Arrays.asList("a", "b", "a", "c", "d");
+        int count = Collections.frequency(letters, "a");
+        System.out.println(count);
+
+
     }
 }
