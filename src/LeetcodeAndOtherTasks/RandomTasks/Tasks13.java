@@ -1,5 +1,6 @@
  import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
    import java.util.List;
@@ -52,7 +53,6 @@ List<Integer> numbersSort = numbers4.stream()
           System.out.println(numbersSort);
 
       Collections.sort(numbers4, Collections.reverseOrder());
-
            System.out.println( numbers4);
     }
 }
