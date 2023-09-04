@@ -4,10 +4,10 @@ public class ArithmeticOperations {
 
     public static void main(String[] args) {
        // Дано два числа a и b. Найдите гипотенузу треугольника с заданными катетами.
-        int a1 = 6;
-        int b1 = 8;
-        int c1 = (int) Math.sqrt((a1*a1) + (b1*b1));
-        System.out.println(c1);
+        // int a1 = 6;
+        // int b1 = 8;
+        // int c1 = (int) Math.sqrt((a1*a1) + (b1*b1));
+        // System.out.println(c1);
 // считывает целое число и выводит текст, аналогичный приведенному в примере.
 // Пробелы, знаки препинания, заглавные и строчные буквы важны179
 
@@ -21,8 +21,10 @@ public class ArithmeticOperations {
 // Программа получает на вход числа N и K. должна вывести искомое количество яблок.
 Scanner scanner = new Scanner(System.in);
  int a3 = scanner.nextInt();
+     int b3 = scanner.nextInt();   
+ //    int c3 = b3 - (a3 * (b3 /a3)) ;
+ int c3 = b3%a3 ;
 
-
-
+System.out.println(c3);
     }
 }
