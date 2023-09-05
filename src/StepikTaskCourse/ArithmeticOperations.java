@@ -19,12 +19,31 @@ public class ArithmeticOperations {
 // System.out.println("The previous number for the number " + a2 +" is " + c2 + ".");
 
 // Программа получает на вход числа N и K. должна вывести искомое количество яблок.
-Scanner scanner = new Scanner(System.in);
- int a3 = scanner.nextInt();
-     int b3 = scanner.nextInt();   
- //    int c3 = b3 - (a3 * (b3 /a3)) ;
- int c3 = b3%a3 ;
+// Scanner scanner = new Scanner(System.in);
+//  int a3 = scanner.nextInt();
+//      int b3 = scanner.nextInt();   
+//  //    int c3 = b3 - (a3 * (b3 /a3)) ;
+//  int c3 = b3%a3 ;
 
-System.out.println(c3);
+// System.out.println(c3);
+//  109 километров. Байкер Вася стартует с нулевого километра МКАД и едет со скоростью v километров в час.
+// На какой отметке он остановится через t часов?Программа должна вывести целое число 
+// от 0 до 108 — номер отметки, на которой остановится Вася.
+Scanner scanner = new Scanner(System.in);
+ int v = scanner.nextInt();
+ int t = scanner.nextInt();   
+int circle = 109;
+int fin = 0;
+
+if(v > 0) {
+    fin = (v * t) % circle;
+} else {
+    fin = Math.abs((v * t) % circle);
+    if(fin == 0) {
+        fin = 0;
+    } else {
+        fin = circle - fin;
     }
-}
+} 
+        System.out.println(fin);
+    }}
