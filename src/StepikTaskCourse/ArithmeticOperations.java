@@ -76,11 +76,43 @@ public class ArithmeticOperations {
 // System.out.println(sum);
 // Выведите следующее за ним четное число. При решении этой задачи
 // нельзя использовать условную инструкцию if и циклы.
+// Scanner scanner = new Scanner(System.in);
+// int number = scanner.nextInt();
+
+// int nextEvenNumber = (number / 2 + 1) * 2;
+
+// System.out.println(nextEvenNumber);
+// Дано число n. С начала суток прошло n минут. Определите, сколько часов и минут будут показывать 
+//электронные часы в этот момент.
+// Scanner scanner = new Scanner(System.in);
+        
+//   int n = scanner.nextInt();
+//   int hours = (n / 60) % 24;
+//   int minutes = n % 60;
+//   System.out.println(hours + " " + minutes);
+
+//  время в формате h:mm:ss, то есть сначала записывается количество часов, потом обязательно
+// двузначное количество минут, затем обязательно двузначное количество секунд. 
+// C начала суток прошло n секунд. Выведите, что покажут часы.
+// c
+//         int n = scanner.nextInt();
+//         int hours = (n / 3600) % 24;
+//         int minutes = (n % 3600) / 60;
+//         int seconds = n % 60;
+        
+//         System.out.printf("%d:%02d:%02d", hours, minutes, seconds);
+//  считывает значения двух целочисленных переменных a и b, затем меняет их значения местами
+// Scanner scanner = new Scanner(System.in);
+//     int a6 = scanner.nextInt();  
+//     int b6 = scanner.nextInt();
+//     System.out.println(b6 + " " + a6);
+
+//  занятия начинаются в 9:00. Продолжительность урока — 45 минут, после 1-го, 3-го, 5-го и т.д.
+// уроков перемена 5 минут, а после 2-го, 4-го, 6-го и т.д. — 15 минут. Определите,
+// когда заканчивается указанный урок. Входные данные
+// Дан номер урока (число от 1 до 10).
 Scanner scanner = new Scanner(System.in);
-int number = scanner.nextInt();
 
-int nextEvenNumber = (number / 2 + 1) * 2;
 
-System.out.println(nextEvenNumber);
 
     }}
