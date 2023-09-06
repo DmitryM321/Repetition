@@ -62,16 +62,25 @@ public class ArithmeticOperations {
 // System.out.println(tens);
 
 // Дано трехзначное число (оно может быть отрицательным). Найдите сумму его цифр.
+// Scanner scanner = new Scanner(System.in);
+// int number = scanner.nextInt();
+// int sum = 0;
+// int absNumber = Math.abs(number);
+
+// while (absNumber > 0) {
+//     int digit = absNumber % 10;  
+//     sum += digit; 
+//     absNumber /= 10;  
+// }
+
+// System.out.println(sum);
+// Выведите следующее за ним четное число. При решении этой задачи
+// нельзя использовать условную инструкцию if и циклы.
 Scanner scanner = new Scanner(System.in);
 int number = scanner.nextInt();
-int sum = 0;
-int absNumber = Math.abs(number);
 
-while (absNumber > 0) {
-    int digit = absNumber % 10;  
-    sum += digit; 
-    absNumber /= 10;  
-}
+int nextEvenNumber = (number / 2 + 1) * 2;
 
-System.out.println(sum);
+System.out.println(nextEvenNumber);
+
     }}
