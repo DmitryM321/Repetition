@@ -113,30 +113,56 @@ public class ArithmeticOperations {
 // когда заканчивается указанный урок. Входные данные
 // Дан номер урока (число от 1 до 10).
 // 1 + 5, 2 + 15, 3 + 5, 4 + 15, 5 + 5, 6 + 15, 7 +5 
-Scanner scanner = new Scanner(System.in);
-// int a7 = scanner.nextInt();  
- int a7 = 3;  
- int start = 540; // in minuts
- int hours = 45;
- int even = 15;
- int odd = 5;   
- int fin = 0;
- if(a7 % 2 ==0){
-  fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) + even*a7 - (even*(a7 /2)) -even ;   
- } else {
-fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) - odd + even*a7 - (even*(a7 /2)) -even  ;   
- }
+// Scanner scanner = new Scanner(System.in);
+// // int a7 = scanner.nextInt();  
+//  int a7 = 3;  
+//  int start = 540; // in minuts
+//  int hours = 45;
+//  int even = 15;
+//  int odd = 5;   
+//  int fin = 0;
+//  if(a7 % 2 ==0){
+//   fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) + even*a7 - (even*(a7 /2)) -even ;   
+//  } else {
+// fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) - odd + even*a7 - (even*(a7 /2)) -even  ;   
+//  }
   
-//540 + 45+ + 5 + 45 = 635
-// 540 + 180 = 720 + 10 + 15 = 745
-// 540 + 450 + 25 + 60 = 1075
-// 540 + 135 + 20 = 695
-// 6    540 + 270 + 15 + 30 = 855
- System.out.println(fin/60 + " " + (fin - (fin/60)*60));
+// //540 + 45+ + 5 + 45 = 635
+// // 540 + 180 = 720 + 10 + 15 = 745
+// // 540 + 450 + 25 + 60 = 1075
+// // 540 + 135 + 20 = 695
+// // 6    540 + 270 + 15 + 30 = 855
+//  System.out.println(fin/60 + " " + (fin - (fin/60)*60));
 
- 
- 
+//  Scanner scanner = new Scanner(System.in);
 
+//  int a = scanner.nextInt();
+//  int b = scanner.nextInt();
+//  int n = scanner.nextInt();
+
+//  int totalCostInKopeks = (a * 100 + b) * n;
+//  int rub = totalCostInKopeks / 100;
+//  int kop = totalCostInKopeks % 100;
+
+//  System.out.println(rub + " " + kop);
+ // Программа на вход получает три целых числа — часы, минуты, секунды, задающие первый момент 
+ // времени и три целых числа, задающих второй момент времени. Выведите число секунд между этими моментами времени.
+//  Scanner scanner = new Scanner(System.in);
+
+//         int hours1 = scanner.nextInt();
+//         int minutes1 = scanner.nextInt();
+//         int seconds1 = scanner.nextInt();
+        
+//         int hours2 = scanner.nextInt();
+//         int minutes2 = scanner.nextInt();
+//         int seconds2 = scanner.nextInt();
+        
+//         int totalSeconds1 = hours1 * 3600 + minutes1 * 60 + seconds1;
+//         int totalSeconds2 = hours2 * 3600 + minutes2 * 60 + seconds2;
+        
+//         int differenceInSeconds = totalSeconds2 - totalSeconds1;
+
+//         System.out.println(differenceInSeconds);
         }
 
     }
