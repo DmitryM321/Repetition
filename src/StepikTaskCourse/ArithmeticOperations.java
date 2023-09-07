@@ -1,5 +1,6 @@
 package StepikTaskCourse;
 import java.lang.reflect.Array;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Scanner;
 public class ArithmeticOperations {
@@ -111,8 +112,33 @@ public class ArithmeticOperations {
 // уроков перемена 5 минут, а после 2-го, 4-го, 6-го и т.д. — 15 минут. Определите,
 // когда заканчивается указанный урок. Входные данные
 // Дан номер урока (число от 1 до 10).
+// 1 + 5, 2 + 15, 3 + 5, 4 + 15, 5 + 5, 6 + 15, 7 +5 
 Scanner scanner = new Scanner(System.in);
+// int a7 = scanner.nextInt();  
+ int a7 = 3;  
+ int start = 540; // in minuts
+ int hours = 45;
+ int even = 15;
+ int odd = 5;   
+ int fin = 0;
+ if(a7 % 2 ==0){
+  fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) + even*a7 - (even*(a7 /2)) -even ;   
+ } else {
+fin = start + (hours*a7) + odd*a7 - (odd*(a7 / 2)) - odd + even*a7 - (even*(a7 /2)) -even  ;   
+ }
+  
+//540 + 45+ + 5 + 45 = 635
+// 540 + 180 = 720 + 10 + 15 = 745
+// 540 + 450 + 25 + 60 = 1075
+// 540 + 135 + 20 = 695
+// 6    540 + 270 + 15 + 30 = 855
+ System.out.println(fin/60 + " " + (fin - (fin/60)*60));
 
+ 
+ 
 
+        }
 
-    }}
+    }
+
+ 
