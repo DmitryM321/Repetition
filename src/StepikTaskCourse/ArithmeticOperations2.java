@@ -47,21 +47,32 @@ public class ArithmeticOperations2 {
 //     int days = (h - a + climbed - 1) / climbed + 1;
 
 //     System.out.println(days);
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
+    //     Scanner scanner = new Scanner(System.in);
+    //     int number = scanner.nextInt();
 
-    int thousandsPlace = number / 1000;
-    int hundredsPlace = (number / 100) % 10;
-    int tensPlace = (number / 10) % 10;
-    int unitsPlace = number % 10;
+    // int thousandsPlace = number / 1000;
+    // int hundredsPlace = (number / 100) % 10;
+    // int tensPlace = (number / 10) % 10;
+    // int unitsPlace = number % 10;
 
-    int sum = (thousandsPlace + unitsPlace) - (hundredsPlace + tensPlace);
+    // int sum = (thousandsPlace + unitsPlace) - (hundredsPlace + tensPlace);
 
-    if (sum == 0) {
-        System.out.println(1);
-    } else {
-        System.out.println(0);
+    // if (sum == 0) {
+    //     System.out.println(1);
+    // } else {
+    //     System.out.println(0);
+//  Scanner scanner = new Scanner(System.in);
+// Даны два натуральных числа n и m. Если одно из них делится на другое нацело, выведите 1, иначе выведите 0.
+int a = 28;
+int b = 4;
+
+int case1 = a % b; // 0   
+int case2 = b % a; // 4
+System.out.println(1 / (case1 * case2 + 1));
+System.out.println(27 % 28);
+
+
     }
 }
-}
+
     
