@@ -63,16 +63,52 @@ public class ArithmeticOperations2 {
     //     System.out.println(0);
 //  Scanner scanner = new Scanner(System.in);
 // Даны два натуральных числа n и m. Если одно из них делится на другое нацело, выведите 1, иначе выведите 0.
-int a = 28;
-int b = 4;
+// int a = 28;
+// int b = 4;
 
-int case1 = a % b; // 0   
-int case2 = b % a; // 4
-System.out.println(1 / (case1 * case2 + 1));
-System.out.println(27 % 28);
+// int case1 = a % b; // 0   
+// int case2 = b % a; // 4
+// System.out.println(1 / (case1 * case2 + 1));
+// System.out.println(27 % 28);
+
+// int a = 28;
+// int b = 4;  
+// int result = ((a * (a / b) + b * (b / a)) / (b / a + a / b));       
+//        System.out.println(result); 
+// int a = 4;
+// int b = 5;
+// int max;
+// if (a > b) {
+//     max = a;
+// } else {
+//     max = b;
+// }
+// System.out.println(max);
+//         Scanner scanner = new Scanner(System.in);
+//         int year = scanner.nextInt();
+//         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+//             System.out.println("YES");
+//         } else {
+//             System.out.println("NO");
+//         }
+
+int x = 115;
+        
+        int sign = 0;
+        
+        if (x > 0) {
+            sign = 1;
+        } else if (x < 0) {
+            sign = -1;
+        }
+        
+        System.out.println( sign);
+    }
+}
 
 
     }
 }
+
 
     
